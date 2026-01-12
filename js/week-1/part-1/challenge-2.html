@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Mark's BMI</h1>
+    <label for="marksmass">Mass: 
+            <input type="text" id="marksmass">
+    </label>
+    <br><br>
+    <label for="marksheight">Height: 
+            <input type="text" id="marksheight">
+    </label>
+    <br><br>
+    <label id="marksbmi"></label>
+
+    <h1>John's BMI</h1>
+    <label for="johnsmass">Mass: 
+            <input type="text" id="johnsmass">
+    </label>
+    <br><br>
+    <label for="johnsheight">Height: 
+            <input type="text" id="johnsheight">
+    </label>
+    <br><br>
+    <label id="johnsbmi"></label>
+
+    <h1>Comparison</h1>
+    <button id="comparison-button">Compare</button>
+    <label id="comparison-result"></label>
+</body>
+<script>
+    document.getElementById("comparison-button").onclick = () => {
+        //mark
+        let markMass = document.getElementById("marksmass").value
+        let markHeight = document.getElementById("marksheight").value
+        markBmi = markMass / (markHeight*markHeight)
+        document.getElementById("marksbmi").textContent = markBmi
+
+        //john
+        let johnMass = Number(document.getElementById("johnsmass").value)
+        let johnHeight = Number(document.getElementById("johnsheight").value)
+        johnBmi = johnMass / (johnHeight*johnHeight)
+        document.getElementById("johnsbmi").textContent = johnBmi
+
+        let result = document.getElementById("comparison-result")
+        if (!markMass || !markHeight || !johnMass || !johnHeight) {
+            result.textContent = "Please input"
+        } else if (markBmi > johnBmi) {
+            result.textContent = `marksBmi (${markBmi}) > johnsBmi (${johnBmi})`
+        } else if (markBmi < johnBmi) {
+            result.textContent = `marksBmi (${markBmi}) < johnsBmi (${johnBmi})`
+        }
+        else {
+            result.textContent = `marksBmi (${markBmi}) = johnsBmi (${johnBmi})`
+        }
+    }
+</script>
+</html>
