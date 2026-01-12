@@ -3,25 +3,25 @@ matches = data.match(/\d+/g).map(Number)
 dolphins = matches.slice(0,3)
 koalas = matches.slice(4,7)
 
-dolphinsAvg = dolphins.reduce(
+avgDolphins = dolphins.reduce(
     (acumulator, currentValue) => acumulator + currentValue
     , 0) 
     / dolphins.length
-console.log(dolphinsAvg);
+console.log(avgDolphins);
 
 
-koalasAvg = koalas.reduce(
+avgKoalas = koalas.reduce(
     (acumulator, currentValue) => acumulator + currentValue
     , 0)
     / koalas.length
-console.log(koalasAvg);
+console.log(avgKoalas);
 
 
-if (dolphinsAvg < koalasAvg && koalasAvg >= 100) {
+if (avgDolphins < avgKoalas && avgKoalas >= 100) {
     console.log("koalas win")
-} else if (dolphinsAvg > koalasAvg && dolphinsAvg >= 100) {
+} else if (avgDolphins > avgKoalas && avgDolphins >= 100) {
     console.log("dolphins win");
-} else if(dolphinsAvg === koalasAvg && dolphinsAvg >= 100 && koalasAvg >= 100) {
+} else if(avgDolphins === avgKoalas && avgDolphins >= 100 && avgKoalas >= 100) {
     console.log("tie");
 }
 else {
