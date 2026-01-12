@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="bill">Bill: 
+        <input type="text" id="bill">
+    </label>
+    <br><br>
+    <button id="calculate">Calculate</button>
+    <br><br>
+    <label id="result"></label>
+</body>
+<script>
+    document.getElementById("calculate").onclick = () => {
+        let bill = Number(document.getElementById("bill").value)
+        let tip = bill < 50 ? 0 : bill <= 300 ? .15*bill : .2*bill
+        let total = bill + tip
+        document.getElementById("result").textContent = `The bill was ${bill},
+        the tip was ${tip} 
+        and the total value ${total}`
+    }
+</script>
+</html>

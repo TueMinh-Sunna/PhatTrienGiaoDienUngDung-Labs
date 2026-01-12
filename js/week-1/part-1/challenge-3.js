@@ -7,11 +7,15 @@ dolphinsAvg = dolphins.reduce(
     (acumulator, currentValue) => acumulator + currentValue
     , 0) 
     / dolphins.length
+console.log(dolphinsAvg);
+
 
 koalasAvg = koalas.reduce(
     (acumulator, currentValue) => acumulator + currentValue
     , 0)
     / koalas.length
+console.log(koalasAvg);
+
 
 if (dolphinsAvg < koalasAvg && koalasAvg >= 100) {
     console.log("koalas win")
