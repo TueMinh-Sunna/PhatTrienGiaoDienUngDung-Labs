@@ -13,9 +13,13 @@ koalasAvg = koalas.reduce(
     , 0)
     / koalas.length
 
-if (dolphinsAvg < koalasAvg) {
+if (dolphinsAvg < koalasAvg && koalasAvg >= 100) {
     console.log("koalas win")
-} else if (dolphinsAvg > koalasAvg) {
+} else if (dolphinsAvg > koalasAvg && dolphinsAvg >= 100) {
     console.log("dolphins win");
-} else {console.log("tie");
+} else if(dolphinsAvg === koalasAvg && dolphinsAvg >= 100 && koalasAvg >= 100) {
+    console.log("tie");
+}
+else {
+    console.log("no team wins");
 }
