@@ -13,6 +13,10 @@ for (bill of bills) {
     totals.push(total)
 }
 
-function calcAverage (array) {
-    
+function calcAverage (arr) {
+    return arr.reduce(
+        (accumulator, currentValue) => accumulator + currentValue
+        , 0) / arr.length
 }
+
+console.log(calcAverage(totals).toFixed(2));
