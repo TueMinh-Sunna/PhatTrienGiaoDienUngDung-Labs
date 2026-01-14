@@ -1,4 +1,4 @@
-function Car (make, speed) {
+export function Car (make, speed) {
     this.make = make
     this.speed = speed
 }
@@ -13,7 +13,7 @@ Car.prototype.brake = function () {
     console.log(this.speed);
 }
 
-car1 = new Car('BMW',120)
+const car1 = new Car('BMW',120)
 car1.accelerate()
 car1.accelerate()
 car1.brake()

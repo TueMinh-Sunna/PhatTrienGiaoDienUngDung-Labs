@@ -1,25 +1,28 @@
-import { CarCl } from "./challenge2.js";
+import { Car } from "./challenge1.js";
 
-class EV extends CarCl {
-    constructor(make, speed, charge) {
-        super(make, speed)
-        this.charge = charge
-    }
-
-    chargeBattery(chargeTo) {
-        this.charge = chargeTo
-        console.log(this.charge);
-        
-    }
-
-    accelerate() {
-        this.speed += 20
-        this.charge -= 1
-        console.log(`${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`);
-    }
+function EV(make, speed, charge) {
+  Car.call(this, make, speed);
+  this.charge = charge;
 }
 
-const e1 = new EV('Tesla', 120, 23)
+EV.prototype = Object.create(Car.prototype);
+EV.prototype.constructor = EV;
+
+EV.prototype.chargeBattery = function (chargeTo) {
+  this.charge = chargeTo;
+  console.log(this.charge);
+};
+
+EV.prototype.accelerate = function () {
+  this.speed += 20;
+  this.charge -= 1;
+  console.log(
+    `${this.make} going at ${this.speed} km/h, with a charge of ${this.charge}%`
+  );
+};
+
+const e1 = new EV("Tesla", 120, 23);
 e1.accelerate();
-e1.brake()
-e1.chargeBattery(90)
+e1.brake();     
+e1.chargeBattery(90);
+e1.brake();     
