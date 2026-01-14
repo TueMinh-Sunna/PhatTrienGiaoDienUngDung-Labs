@@ -1,4 +1,4 @@
-class CarCl {
+export class CarCl {
     constructor(make, speed) {
         this.make = make
         this.speed = speed
@@ -23,7 +23,7 @@ class CarCl {
     }
 }
 
-car1 = new Carcl('BMW',120)
+const car1 = new CarCl('BMW',120)
 car1.accelerate()
 car1.accelerate()
 car1.brake()
