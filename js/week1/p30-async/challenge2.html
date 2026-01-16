@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="images"></div>
+</body>
+<script>
+    function createImage(imgPath) {
+        return new Promise((resolve, reject) => {
+            let img = document.createElement('img')
+            img.style.maxWidth = '100%'
+            img.setAttribute('src', imgPath)
+            img.onload = () => {
+                document.querySelector('.images').append(img)
+                resolve(img)
+            }
+            img.onerror = () => {
+                reject(error)
+            }
+        })
+    }
+
+    let imgPath1 = "./img/1.jpg"
+    let imgPath2 = "./img/2.jpg"
+
+    createImage(imgPath1)
+        .then((img) => {
+            setTimeout(
+                () => {
+                    img.style.display = 'none'
+                    createImage(imgPath2)
+                        .then((img) => {
+                            setTimeout(
+                                () => {
+                                    img.style.display = 'none'
+                                }
+                                , 2000)
+                        })
+                }
+                , 2000)
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+</script>
+
+</html>
