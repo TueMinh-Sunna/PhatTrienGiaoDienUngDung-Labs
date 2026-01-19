@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+    function whereAmI(array) {
+    fetch("https://geocode.xyz/" + array[0] + "," + array[1] + "?geoit=json")
+        .then(response => response.json())
+        .then(data => {
+            txt = "You are in " + data.standard.region + ", " + data.standard.countryname;
+            document.querySelector("div").textContent = txt
+        })
+        .catch(error => {
+            console.log(error);
+        })
+
+}
+
+coordinates1 = [52.508, 13.381]
+coordinates2 = [19.037, 72.873]
+coordinates3 = [-33.933, 18.474]
+
+whereAmI(coordinates1)
+// whereAmI(coordinates2)
+// whereAmI(coordinates3)
+</script>
+</html>
