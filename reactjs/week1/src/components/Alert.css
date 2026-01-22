@@ -1,0 +1,25 @@
+.alert {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid;
+}
+
+.alert-success {
+    background-color: mintcream;
+    border: green;
+}
+
+.alert-warning {
+    background-color: yellow;
+    border: orange;
+}
+
+.alert-error {
+    background-color: beige;
+    border: red;
+}
+
+.close-btn {
+    margin-left: 10px;
+    cursor: pointer;
+}
