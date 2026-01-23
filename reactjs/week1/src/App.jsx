@@ -3,70 +3,142 @@ import ProductCard from "./components/ProductCard";
 import Button from "./components/Button";
 import Alert from "./components/Alert";
 import LoginForm from "./components/LoginForm";
-import './App.css'
+import './App.css';
+import StudentInfo from "./components/StudentInfo";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Counter from "./components/Counter";
+import UserForm from "./components/UserForm";
+import StatusBadge from "./components/StatusBadge";
+import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
 
 const App = () => {
+  // b1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   //b1b3============================================
-  const [alertType, setAlertType] = useState(null)
+  // const [alertType, setAlertType] = useState(null)
 
-  //b1b5================
-  const products = [
-    {id: 1, src: "/images/1.jpg", name: "a", price: "VND1"},
-    {id: 2, src: "/images/2.jpg", name: "b", price: "VND2"},
-    {id: 3, src: "/images/3.jpg", name: "c", price: "VND3"},
-    {id: 4, src: "/images/4.jpg", name: "d", price: "VND4"}
-  ]
+  // //b1b5================
+  // const products = [
+  //   {id: 1, src: "/images/1.jpg", name: "a", price: "VND1"},
+  //   {id: 2, src: "/images/2.jpg", name: "b", price: "VND2"},
+  //   {id: 3, src: "/images/3.jpg", name: "c", price: "VND3"},
+  //   {id: 4, src: "/images/4.jpg", name: "d", price: "VND4"}
+  // ]
+
+  // return (
+  //   //b1b1====================
+  //   // <div className="app">
+  //   //   <ProductCard
+  //   //     src = "/images/1.png"
+  //   //     name = "Daruma"
+  //   //     price="VND100,000"
+  //   //   />
+  //   // </div>
+
+  //   //b1b2=============================
+  //   // <div style={{ padding: 20 }}>
+  //   //   <Button type={"primary"}>Save</Button>
+  //   //   <Button type={"danger"}>Delete</Button>
+  //   //   <Button type={"success"}>Done</Button>
+  //   // </div>
+
+  //   //b1b3===============================
+  //   // <div style={{ padding: "20px" }}>
+  //   //   <button onClick={() => setAlertType("success")}>
+  //   //     show success
+  //   //   </button>
+  //   //   <button onClick={() => setAlertType("warning")}>
+  //   //     show warning
+  //   //   </button>
+  //   //   <button onClick={() => setAlertType("error")}>
+  //   //     show error
+  //   //   </button>
+  //   //   <Alert 
+  //   //     type={alertType}
+  //   //     message={`${alertType} message`}
+  //   //     onClose={() => {setAlertType(null)}}
+  //   //   />
+  //   // </div>
+
+  //   //b1b4=============
+  //   // <LoginForm />
+
+  //   //b1b5============================
+  //   // <div className="product-list">
+  //   //   {
+  //   //     products.map((item) =>
+  //   //       <ProductCard
+  //   //         key={item.id}
+  //   //         src={item.src}
+  //   //         name={item.name}
+  //   //         price={item.price}
+  //   //       />
+  //   //     )
+  //   //   }
+  //   // </div>
+
+  // )
+
+  /*b2@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+  // b2b4
+  const [status, changeStatus] = useState('')
+
+  // b2b5
+  const [todos, setTodos] = useState([])
+
+  const addTodo = (text) => {
+    setTodos([...todos, {id: Date.now(), text: text}])
+  }
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter(todo => todo.id != id))
+  }
 
   return (
-    //b1b1====================
-    // <div className="app">
-    //   <ProductCard
-    //     src = "/images/1.png"
-    //     name = "Daruma"
-    //     price="VND100,000"
+    //b2b1==================
+    // <div>
+    //   <Header />
+    //   <StudentInfo 
+    //   src='/images/1.jpg'
+    //   name='meomeo'
+    //   classn='A1'
     //   />
+    //   <Footer />
     // </div>
 
-    //b1b2=============================
-    // <div style={{ padding: 20 }}>
-    //   <Button type={"primary"}>Save</Button>
-    //   <Button type={"danger"}>Delete</Button>
-    //   <Button type={"success"}>Done</Button>
+    //b2b2=============
+    // <div>
+    //   <Counter />
     // </div>
 
-    //b1b3===============================
-    // <div style={{ padding: "20px" }}>
-    //   <button onClick={() => setAlertType("success")}>
-    //     show success
-    //   </button>
-    //   <button onClick={() => setAlertType("warning")}>
-    //     show warning
-    //   </button>
-    //   <button onClick={() => setAlertType("error")}>
-    //     show error
-    //   </button>
-    //   <Alert 
-    //     type={alertType}
-    //     message={`${alertType} message`}
-    //     onClose={() => {setAlertType(null)}}
-    //   />
+    //b2b3==============
+    // <div>
+    //   <UserForm />
     // </div>
 
-    //b1b4=============
-    // <LoginForm />
+    //b2b4======================
+    // <div>
+    //   <StatusBadge
+    //     status={status} />
+    //   <button
+    //     onClick={() => { changeStatus('online') }}
+    //   >online</button>
+    //   <button
+    //     onClick={() => { changeStatus('offline') }}
+    //   >offline</button>
+    //   <button
+    //     onClick={() => { changeStatus('busy') }}
+    //   >busy</button>
+    // </div>
 
-    //b1b5
-    <div className="product-list">
-      {
-        products.map((item) =>
-          <ProductCard
-            key={item.id}
-            src={item.src}
-            name={item.name}
-            price={item.price}
-          />
-        )
-      }
+    //b2b5========================
+    <div>
+      <TodoInput addTodo={addTodo}/>
+      <TodoList 
+        todos={todos}
+        deleteTodo={deleteTodo}
+      />
     </div>
   )
 }

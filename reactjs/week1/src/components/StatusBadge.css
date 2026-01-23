@@ -1,0 +1,15 @@
+.status-badge {
+    margin: 10px;
+}
+
+.online {
+    background-color: green;
+}
+
+.offline {
+    background-color: gray;
+}
+
+.busy {
+    background-color: red;
+}
