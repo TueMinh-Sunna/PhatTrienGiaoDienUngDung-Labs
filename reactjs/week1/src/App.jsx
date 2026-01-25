@@ -16,6 +16,17 @@ import UserForm2 from "./components/UserForm2";
 import DigitalClock from "./components/DigitalClock";
 import ProductFilter from "./components/ProductFilter";
 import TodoApp from "./components/TodoApp";
+import StopWatch from "./components/StopWatch";
+import FetchUsers from "./components/FetchUsers";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import Users from "./components/Users";
+import UserList from "./components/UserList";
+import UserById from "./components/UserById";
+import PostSearch from "./components/PostSearch";
+import TodoCrud from "./components/TodoCrud";
+import TodoReducerApp from "./components/TodoReducerApp";
+import ThemeManager from "./components/ThemeManager";
+import CartManager from "./components/CartManager";
 
 const App = () => {
   // b1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -146,25 +157,86 @@ const App = () => {
   //   // </div>
 
   /*b3@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+  // return (
+  // //b3b1============
+  // // <div>
+  // //   <UserForm2 />
+  // // </div>
+
+  // //b3b2
+  //   // <div>
+  //   //   <DigitalClock />
+  //   // </div>
+
+  //   //b3b3
+  //   // <div>
+  //   //   <ProductFilter />
+  //   // </div>
+
+  //   //b3b4
+  //   // <div>
+  //   //   <TodoApp />
+  //   // </div>
+
+  //   //b3b5
+  //   // <div>
+  //   //   <StopWatch />
+  //   // </div>
+
+  //   //b3b6
+  //   // <div>
+  //   //   <FetchUsers />
+  //   // </div>
+
+  //   //b3b7
+  //   // <div>
+  //   //   <ThemeSwitcher />
+  //   // </div>
+  // )
+
+  /*b4@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+  // return (
+  //   //b4b1
+  //   // <div>
+  //   //   <Users />
+  //   // </div>
+
+  //   //b4b2
+  //   // <div>
+  //   //   <UserList />
+  //   // </div>
+
+  //   //b4b3
+  //   // <div>
+  //   //   <UserById />
+  //   // </div>
+
+  //   //b4b4
+  //   // <div>
+  //   //   <PostSearch />
+  //   // </div>
+
+  //   //b4b5
+  //   // <div>
+  //   //   <TodoCrud />
+  //   // </div>
+  // )
+
+  /*b5@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
   return (
-  //b3b1============
-  // <div>
-  //   <UserForm2 />
-  // </div>
-
-  //b3b2
+    //b5b1
     // <div>
-    //   <DigitalClock />
+    //   <TodoReducerApp />
     // </div>
 
-    //b3b3
+    //b5b2
     // <div>
-    //   <ProductFilter />
+    //   <ThemeManager />
     // </div>
 
-    //b3b4
+    //b5b3
     <div>
-      <TodoApp />
+      <CartManager />
     </div>
   )
 }
