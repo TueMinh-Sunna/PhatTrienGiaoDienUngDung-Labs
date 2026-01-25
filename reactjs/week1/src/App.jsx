@@ -12,6 +12,10 @@ import UserForm from "./components/UserForm";
 import StatusBadge from "./components/StatusBadge";
 import TodoInput from "./components/TodoInput";
 import TodoList from "./components/TodoList";
+import UserForm2 from "./components/UserForm2";
+import DigitalClock from "./components/DigitalClock";
+import ProductFilter from "./components/ProductFilter";
+import TodoApp from "./components/TodoApp";
 
 const App = () => {
   // b1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -81,64 +85,86 @@ const App = () => {
   // )
 
   /*b2@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-  // b2b4
-  const [status, changeStatus] = useState('')
+  // // b2b4
+  // const [status, changeStatus] = useState('')
 
-  // b2b5
-  const [todos, setTodos] = useState([])
+  // // b2b5
+  // const [todos, setTodos] = useState([])
 
-  const addTodo = (text) => {
-    setTodos([...todos, {id: Date.now(), text: text}])
-  }
+  // const addTodo = (text) => {
+  //   setTodos([...todos, {id: Date.now(), text}])
+  // }
 
-  const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id != id))
-  }
+  // const deleteTodo = (id) => {
+  //   setTodos(todos.filter(todo => todo.id != id))
+  // }
 
+  // return (
+  //   //b2b1==================
+  //   // <div>
+  //   //   <Header />
+  //   //   <StudentInfo 
+  //   //   src='/images/1.jpg'
+  //   //   name='meomeo'
+  //   //   classn='A1'
+  //   //   />
+  //   //   <Footer />
+  //   // </div>
+
+  //   //b2b2=============
+  //   // <div>
+  //   //   <Counter />
+  //   // </div>
+
+  //   //b2b3==============
+  //   // <div>
+  //   //   <UserForm />
+  //   // </div>
+
+  //   //b2b4======================
+  //   // <div>
+  //   //   <StatusBadge
+  //   //     status={status} />
+  //   //   <button
+  //   //     onClick={() => { changeStatus('online') }}
+  //   //   >online</button>
+  //   //   <button
+  //   //     onClick={() => { changeStatus('offline') }}
+  //   //   >offline</button>
+  //   //   <button
+  //   //     onClick={() => { changeStatus('busy') }}
+  //   //   >busy</button>
+  //   // </div>
+
+  //   //b2b5========================
+  //   // <div>
+  //   //   <TodoInput addTodo={addTodo}/>
+  //   //   <TodoList 
+  //   //     todos={todos}
+  //   //     deleteTodo={deleteTodo}
+  //   //   />
+  //   // </div>
+
+  /*b3@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
   return (
-    //b2b1==================
+  //b3b1============
+  // <div>
+  //   <UserForm2 />
+  // </div>
+
+  //b3b2
     // <div>
-    //   <Header />
-    //   <StudentInfo 
-    //   src='/images/1.jpg'
-    //   name='meomeo'
-    //   classn='A1'
-    //   />
-    //   <Footer />
+    //   <DigitalClock />
     // </div>
 
-    //b2b2=============
+    //b3b3
     // <div>
-    //   <Counter />
+    //   <ProductFilter />
     // </div>
 
-    //b2b3==============
-    // <div>
-    //   <UserForm />
-    // </div>
-
-    //b2b4======================
-    // <div>
-    //   <StatusBadge
-    //     status={status} />
-    //   <button
-    //     onClick={() => { changeStatus('online') }}
-    //   >online</button>
-    //   <button
-    //     onClick={() => { changeStatus('offline') }}
-    //   >offline</button>
-    //   <button
-    //     onClick={() => { changeStatus('busy') }}
-    //   >busy</button>
-    // </div>
-
-    //b2b5========================
+    //b3b4
     <div>
-      <TodoInput addTodo={addTodo}/>
-      <TodoList 
-        todos={todos}
-        deleteTodo={deleteTodo}
-      />
+      <TodoApp />
     </div>
   )
 }
