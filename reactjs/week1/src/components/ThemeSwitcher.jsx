@@ -2,12 +2,14 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
-function App() {
+function ThemeSwitcher() {
   const [theme, setTheme] = useState(() => {
+    // Load initial theme from localStorage or default to "light"
     return localStorage.getItem("theme") || "light";
   });
 
   useEffect(() => {
+    // Persist theme to localStorage whenever it changes
     localStorage.setItem("theme", theme);
   }, [theme]);
 

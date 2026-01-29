@@ -27,6 +27,7 @@ import TodoCrud from "./components/TodoCrud";
 import TodoReducerApp from "./components/TodoReducerApp";
 import ThemeManager from "./components/ThemeManager";
 import CartManager from "./components/CartManager";
+import AATest from "./components/AATest";
 
 const App = () => {
   // b1@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -223,22 +224,27 @@ const App = () => {
   // )
 
   /*b5@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-  return (
-    //b5b1
-    // <div>
-    //   <TodoReducerApp />
-    // </div>
+  // return (
+  //   //b5b1
+  //   // <div>
+  //   //   <TodoReducerApp />
+  //   // </div>
 
-    //b5b2
-    // <div>
-    //   <ThemeManager />
-    // </div>
+  //   //b5b2
+  //   // <div>
+  //   //   <ThemeManager />
+  //   // </div>
 
-    //b5b3
-    <div>
-      <CartManager />
-    </div>
-  )
+  //   //b5b3
+  //   // <div>
+  //   //   <CartManager />
+  //   // </div>
+  // )
+
+    /*test */
+    return (
+      <AATest />
+    )
 }
 
 export default App
